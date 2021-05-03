@@ -80,10 +80,10 @@
         </div>
         <div class="row justify-content-center fs-5 text-center">
           <div class="col-md-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae non laborum corrupti est voluptates sequi maiores commodi quae, adipisci eveniet?</p>
+            <p>Hallo, my name is Valentinus Pandia, you may call me valen, i was 28 years old in Nopember 2021, i have completed my studies in 2017 at Polytechnic STTT Bandung, major Production Garment Concentration of Fashion Design. I have good personality, good attitude and can be responsible for assignment assigned to me. After i complete my studies in 2017, i was work for 1 year as assistat general manager in one of company in Bandung. </p>
           </div>
           <div class="col-md-4">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dicta similique sit, eum nisi quasi nostrum consequuntur commodi, hic, dolore ad earum magnam doloremque nesciunt.</p>
+            <p>In 2018 i am starting to be a freelancer as graphic designer specially in pattern of hijab motif, and in mid 2018 i learn Digital Marketing, specially in strategy of digital marketing. End of 2020 i am learning of web developer until now. it is part of my self-introduction, the rest you can get to know me further from a small part of the projects I have completed and some of the skills I have. I hope you can consider hiring me join to your company. Thanks & Best Regards</p>
           </div>
         </div>
       </div>
@@ -197,17 +197,17 @@
         </div>
         <div class="row justify-content-center mb-3">
           <div class="col-md-6">
-            <form>
+            <form name="contact-form">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" required />
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
                 <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" required />
+                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" />
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="pesan" rows="3" required></textarea>
+                <textarea class="form-control" id="pesan" rows="3" name="pesan" ></textarea>
               </div>
               <button type="submit" class="btn btn-primary">Kirim</button>
             </form>
@@ -230,5 +230,17 @@
     <!-- End Footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxxXocCs83uLBIlEHNeOrNM-h3BugY7DgPMDV5fGrcntECMY1zdz073Pw6JgVGnDz4/exec'
+      const form = document.forms['contact-form']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
   </body>
 </html>
