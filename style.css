@@ -9,6 +9,15 @@
 
 section {
   padding-top: 5rem;
+  transition: ease-out;
+}
+
+.card {
+  transition: 4s;
+}
+
+.card:hover {
+  transform: rotateY(360deg);
 }
 
 .material-icons.orange600 {
